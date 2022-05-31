@@ -16,6 +16,19 @@ public class Lesson {
         return id;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Instructor can change later.
+    public void setInstructor(Teacher instructor) {
+        this.instructor = instructor;
+    }
+
+    public void setLessonTime(double lessonTime) {
+        this.lessonTime = lessonTime;
+    }
+
     public String getName() {
         return name;
     }

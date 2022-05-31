@@ -1,27 +1,15 @@
 import java.util.ArrayList;
 
-public class Teacher {
+public class Teacher extends Person{
 
-    private int id;
-    private String name;
-    private String lastName;
     private ArrayList<Lesson> givenLessons;
 
     public Teacher(int id, String name, String lastName) {
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
+        super(id, name, lastName);
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getLastName() {
-        return lastName;
+    //the lessons that given by teacher.
+    public void giveLesson(Lesson lesson) {
+        this.givenLessons.add(lesson);
     }
 }
