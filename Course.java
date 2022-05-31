@@ -4,19 +4,28 @@ public class Course {
 
     private int id;
     private String name;
+    private ArrayList<Teacher> instructors;
     private ArrayList<Lesson> lessons;
+    private ArrayList<Student> students;
     private double totalTime;
+
+    // to be true the course has to have at least 60 min. lessons
     private boolean isActive;
 
-    public Course(int id, String name) {
+
+    public Course(int id, String name, Teacher headInstructor) {
         this.id = id;
         this.name = name;
+        this.instructors = new ArrayList<>();
+        this.lessons = new ArrayList<>();
+        this.students = new ArrayList<>();
+        this.instructors.add(headInstructor);
         this.totalTime = 0;
         this.isActive = false;
     }
 
-    public void setTotalTime(double totalTime) {
-        this.totalTime = totalTime;
+    public ArrayList<Teacher> getInstructors() {
+        return instructors;
     }
 
     public void setActive(boolean active) {
@@ -54,5 +63,15 @@ public class Course {
 
         if (totalTime >= 60 && this.lessons.size() >= 5)
             setActive(true);
+    }
+
+
+    // To add instructor to the course.
+    public void addInstructor(Teacher teacher) {
+        this.instructors.add(teacher);
+    }
+
+    public void removeInstructor(Teacher teacher) {
+        this.instructors.remove(teacher);
     }
 }

@@ -1,15 +1,16 @@
 import java.util.ArrayList;
 
-public class Teacher extends Person{
+public class Teacher extends Student{
 
-    private ArrayList<Lesson> givenLessons;
+    private ArrayList<Course> givenCourses;
 
     public Teacher(int id, String name, String lastName) {
         super(id, name, lastName);
+        this.givenCourses = new ArrayList<>();
     }
 
-    //the lessons that given by teacher.
-    public void giveLesson(Lesson lesson) {
-        this.givenLessons.add(lesson);
+    //The lessons that given by teacher.
+    public void giveLesson(Course course) {
+        this.givenCourses.add(course);
     }
 }

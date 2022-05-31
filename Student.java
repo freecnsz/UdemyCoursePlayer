@@ -6,6 +6,7 @@ public class Student extends Person {
 
     public Student(int id, String name, String lastName) {
         super(id, name, lastName);
+        this.takenCourses = new ArrayList<>();
     }
 
     public ArrayList<Course> getTakenCourses() {
